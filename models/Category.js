@@ -2,11 +2,15 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Category extends Model {}
+class Category extends Model {
+  static associate(models){
+    //Uses associate method to avoid circular dependency between the Product and Category model
+    Category.hasMany(models.Product, {foreignKey: 'category_id'});
+  }
+}
 
 Category.init(
   {
-    // Define columns
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -26,5 +30,6 @@ Category.init(
     modelName: 'category',
   }
 );
+
 
 module.exports = Category;
