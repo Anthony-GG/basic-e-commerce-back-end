@@ -7,7 +7,7 @@ router.get('/', async(req, res) => {
   // find all tags
   // be sure to include its associated Product data
 
-      //Returns all of the products using include to include Category and Tag models in the results
+      //Returns all of the tags using include to include Category and Product models in the results
       const tags = await Tag.findAll({
         include:[
           // {model: Category},
@@ -24,7 +24,7 @@ router.get('/:id', async(req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
 
-      //Returns all of the products using include to include Category and Tag models in the results
+      //Returns all of the tags using include to include Category and Tag models in the results
       const tags = await Tag.findByPk(req.params.id, {
         include:[
           // {model: Category},
@@ -55,7 +55,6 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
-    // delete one product by its `id` value
     const deletedTag = await Tag.destroy({
       where: {id: req.params.id},
     })

@@ -10,7 +10,7 @@ const Category = require("./Category")
 class Product extends Model {
   //Uses associate method to avoid circular dependency between the Product and Category model
   static associate(models){
-    Product.belongsTo(models.Category, {through: 'Category', foreignKey: 'category_id'});
+    Product.belongsTo(models.Category, {foreignKey: 'category_id'});
     Product.belongsToMany(models.Tag, {through:'ProductTag', foreignKey:'product_id'})
   }
 }
@@ -48,7 +48,7 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: Category,
+        model: 'category',
         key: 'id',
       },
     },
