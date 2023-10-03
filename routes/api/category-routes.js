@@ -50,8 +50,14 @@ router.put('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
+
+  //deletes associated products first
+  const deletedProducts = await Product.destroy({
+    where: {category_id: req.params.id},
+  });
+
   // delete a category by its `id` value
-  const deletedCategory = await Tag.destroy({
+  const deletedCategory = await Category.destroy({
     where: {id: req.params.id},
   })
   //Sends response back to avoid timeout and to show user success!
