@@ -32,7 +32,7 @@ Once all of those steps have been taken, you should be good to start the server 
 ## Video
 
 ### Here is a link to the video example showcasing the installation and usage of this project:
-[![Watch the video](https://img.youtube.com/vi/Hnxx6B_A7Uc/maxresdefault.jpg)](https://www.youtube.com/watch?v=Hnxx6B_A7Uc)
+[![Watch the video](https://img.youtube.com/vi/GN1C6CTHTRA/maxresdefault.jpg)](https://www.youtube.com/watch?v=GN1C6CTHTRA)
 
 ## Mockup
 <div style="text-align:center">
