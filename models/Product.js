@@ -8,11 +8,6 @@ const Category = require("./Category")
 
 // Initialize Product model (table) by extending off Sequelize's Model class
 class Product extends Model {
-  //Uses associate method to avoid circular dependency between the Product and Category model
-  static associate(models){
-    Product.belongsTo(models.Category, {foreignKey: 'category_id'});
-    Product.belongsToMany(models.Tag, {through:'ProductTag', foreignKey:'product_id'})
-  }
 }
 
 // set up fields and rules for Product model

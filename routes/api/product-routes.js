@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     //Returns all of the products using include to include Category and Tag models in the results
     const products = await Product.findAll({
       include:[
-        // {model: Category},
+        {model: Category},
         {model: Tag, through: 'ProductTag'},
       ]
     });
@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
     //Returns all of the products using include to include Category and Tag models in the results
     const product = await Product.findByPk(req.params.id, {
       include:[
-        // {model: Category},
+        {model: Category},
         {model: Tag, through: 'ProductTag'},
       ]
     });

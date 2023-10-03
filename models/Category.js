@@ -5,10 +5,6 @@ const sequelize = require('../config/connection.js');
 const Product = require("./Product")
 
 class Category extends Model {
-  static associate(models){
-    //Uses associate method to avoid circular dependency between the Product and Category model
-    Category.hasMany(models.Product, {foreignKey: 'category_id'});
-  }
 }
 
 Category.init(
