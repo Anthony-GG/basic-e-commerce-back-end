@@ -13,7 +13,7 @@
 - [Usage](#usage)
 - [Video](#video)
 - [Mockup](#mockup)
-- [Contrubuting](#contributing)
+- [Contributing](#contributing)
 - [License](#license)
 - [Contact Me](#questions)
 
